@@ -7,9 +7,6 @@
  * @version 1.0
  */
 ?>
-
-                 
-   
 <?php
 	// Get a number of Front page recent posts set in the customizer
 	$featuredtag = get_theme_mod('pirate_rogue_featuredtag');
@@ -20,9 +17,7 @@
         if (!isset($featurednum)) {
             $featurednum = 3;
         }
-        
-        
-        
+  
         $args = array(
 		'posts_per_page'    => $featurednum,
 		'post_status'       => 'publish',
@@ -33,17 +28,14 @@
 
 	$uku_front_query = new WP_Query( $args );
 	if($uku_front_query->have_posts()) { ?>
-            <div class="featured-slider cf">
-            
+            <div class="featured-slider cf">          
             <?php 
 	  	while($uku_front_query->have_posts()) : $uku_front_query->the_post(); 
                     // Include the featured content template.
                     get_template_part( 'template-parts/content', 'featured-post' );
-                 endwhile; 
-
-                    /* Restore original Post Data */
+                endwhile; 
+                /* Restore original Post Data */
 		wp_reset_postdata();
             ?>
-	</div><!-- end .featured-slider -->
+	</div>
         <?php } ?>
-   <!-- /div #featured-content .featured-content -->

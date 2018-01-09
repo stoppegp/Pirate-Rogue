@@ -16,15 +16,32 @@
     left: 0;
     right: 0;
     display: block;
-    
     padding-top: 5px;
     padding-bottom: 5px;
     border-bottom: 1px solid #ddd;
+    z-index: 21;
     background: #fff;
-    z-index: 10;
     
+    @media screen and (min-width: $breakpoint-1060) {
+	position: relative;
+	width: 87.5%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 17px 0 0;
+	border-bottom: none;
+	background: none; 
+    }
     .admin-bar & {
+        position: absolute;
 	top: 46px;
+        @media screen and (min-width: 783px) {         
+            top: 32px;
+            position: fixed;
+        }
+        @media screen and (min-width: $breakpoint-1060) {
+              top: 0;
+              position: relative;
+        }
     }
 }
 
@@ -33,8 +50,6 @@
 	position: absolute;
     }
 }
-
-
 
 a.site-logo {
     display: none;
@@ -48,6 +63,21 @@ a.site-logo {
 
 p.site-description {
     display: none;
+    
+    @media screen and (min-width: $breakpoint-1060) {
+        display: block;
+	text-align: center;
+	margin: 0;
+	padding: 4px 0 0 0;
+	font-size: 12px;
+	font-size: 0.75rem;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+      
+	.hide-tagline & {
+	    display: none !important;
+	}  
+    }
 }
 
 .header-image {
@@ -80,17 +110,6 @@ p.site-description {
 }
 
 
-/* Minimum width of 790 pixels (WP Admin bar changes size)
------------------------------------------------------------------------------------- */
-
-@media screen and (min-width: $breakpoint-790) {
-  .admin-bar {
-    #site-branding {
-	top: 32px;
-    }
-  }
-}
-
 
 @media screen and (min-width: $breakpoint-1060) {
     .sticky-header {
@@ -100,7 +119,7 @@ p.site-description {
         left: 0;
         width: 100%;
         background: #fff;
-        height: 59px;
+        min-height: 59px;
         transition: -webkit-transform .3s;
         transition: transform .3s;
         transition: transform .3s,-webkit-transform .3s;
@@ -123,33 +142,9 @@ p.site-description {
 	.hide-header-sticky & {
 	    display: none !important;
 	}
-	
-	.fixedheader-dark & {
-	     background: #1a1a1a;
-	}
-	
+
     }
 
-    .fixedheader-dark {
-      &.header-stick {
-	  #overlay-open-sticky, 
-	  #search-open-sticky, 
-	  #header-social-sticky ul li a {
-	      color: rgba(255, 255, 255, 0.5);
-	  }
-	  .sticky-header p.site-title a, 
-	  #overlay-open-sticky:focus, 
-	  #search-open-sticky:focus, 
-	  #header-social-sticky ul li a:focus,
-	  #overlay-open-sticky:hover, 
-	  #search-open-sticky:hover, 
-	  #header-social-sticky ul li a:hover {
-	      color: #fff;
-	  }
-      }
-    }
-
-    
     .header-stick {
 	.sticky-header p {
 	      display: block;
@@ -185,41 +180,6 @@ p.site-description {
 	      }
 	  }
     }
-  
-    #site-branding {
-	position: relative;
-	width: 87.5%;
-	/* -- 1260px at 1440px ---*/
-	margin-left: auto;
-	margin-right: auto;
-	padding: 17px 0 0;
-	border-bottom: none;
-	background: none;
-	
-	.admin-bar & {
-	    top: 0;
-	}
 
-   }
-  
-   
-   
-    p.site-description {
-	display: block;
-	text-align: center;
-	margin: 0;
-	padding: 4px 0 0 0;
-	font-size: 12px;
-	font-size: 0.75rem;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-      
-      
-	.hide-tagline & {
-	    display: none !important;
-	}  
-    }
-    
-  
 }
 

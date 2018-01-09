@@ -9,18 +9,17 @@
 ?>
 
     <section id="big-footer-feature" class="big-footer-feature cf">
-
 	<?php 
-	$linkttitle = "";
+	$linktitle = "";
+	$linktitle = esc_html(get_theme_mod( 'pirate_rogue_footerfeature_title' ) );
+	if (!isset($linktitle) || (empty(trim($linktitle)))) {
+	    $linktitle = __('Featured','pirate-rogue');
+	}
 	
-	if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_title' )) { 
-	    $linkttitle = esc_html(get_theme_mod( 'pirate_rogue_footerfeature_title' ) );
-	?>
-            <h2 class="footer-feature-title"><?php echo $linkttitle; ?></h2>
-	<?php } else { 
-	    $linkttitle = __('Featured','pirate-rogue');
-	    ?>
-         <h2 class="screen-reader-text"><?php echo $linkttitle; ?></h2>
+	if ( '' != get_theme_mod( 'pirate_rogue_footerfeature_title' )) { ?>
+            <h2 class="footer-feature-title"><?php echo $linktitle; ?></h2>
+	<?php } else {   ?>
+	    <h2 class="screen-reader-text"><?php echo $linktitle; ?></h2>
 	<?php } 
         
         $link = get_theme_mod( 'pirate_rogue_footerfeature_btn_link' );
@@ -41,11 +40,9 @@
                     echo '</a>';
                 }
                 ?>
-            </div><!-- end .footer-feature-image -->
+            </div>
         <?php } ?>
-
 	<div class="footer-feature-textwrap">
-
 		<?php if ( '' !== get_theme_mod( 'pirate_rogue_footerfeature_text_big' ) ) : ?>
 			<p class="text-big"><?php echo wp_kses_post( get_theme_mod( 'pirate_rogue_footerfeature_text_big' ) ); ?></p>
 		<?php endif; ?>
@@ -60,6 +57,5 @@
 		if (!empty($link) && (!empty($button_text)))  {
                     echo '<a class="footer-feature-btn" href="'.$link.'">'.$button_text.'</a>';
                 } ?>
-
-	</div><!-- end .footer-feature-textwrap -->
-    </section><!-- end #big-footer-feature -->
+	</div>
+    </section>

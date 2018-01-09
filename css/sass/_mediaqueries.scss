@@ -169,7 +169,17 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 85em) {
  
- 
+ .blog-wrap, 
+  .front-section, 
+ // .singlepost-wrap, 
+ // .recommended-posts-wrap, 
+ // .footer-wrap, 
+//  .big-footer-feature, 
+  .headerimg-on.header-boxed .header-image {
+	margin-left: auto;
+	margin-right:auto;
+	width: 80%;
+  }
   /* --- Typography --- */
   .entry-content p {
     &.pull-left, &.pull-right {
@@ -193,18 +203,22 @@
 ------------------------------------------------------------------------------------ */
 @media screen and (min-width: 112.5em) {
   /* --- General --- */
- 
+  
+  #page-start,
+  .content-wrap,
+  .singlepost-wrap, 
   .blog-wrap {
     min-width: 1560px;     
     margin-left: auto;
     margin-right: auto;
   }
-
+  
   .footer-wrap, 
+  .blog-wrap,
   .big-footer-feature, 
   .headerimg-on.header-boxed .header-image {
     width: 70%;
-  
+
     margin-left: auto;
     margin-right: auto;
   }

@@ -63,10 +63,10 @@
 	 if ('' != get_theme_mod( 'pirate_rogue_featuredtag' )  || '' != get_theme_mod( 'pirate_rogue_featuredcat' ) ) {
 		 $classes[] = 'slider-on';
 	 }
-	 if ('slider-boxed' == get_theme_mod( 'uku_sliderstyle' ) ) {
+	 if ('slider-boxed' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-boxed';
 	 }
-	 if ('slider-fullscreen' == get_theme_mod( 'uku_sliderstyle' ) ) {
+	 if ('slider-fullscreen' == get_theme_mod( 'pirate_rogue_sliderstyle' ) ) {
 		 $classes[] = 'slider-fullscreen';
 	 }
 	 if ('slider-fade' == get_theme_mod( 'uku_slideranimation' ) ) {
@@ -141,9 +141,9 @@
          } 
 
         $logo =  pirate_rogue_get_custom_logo();
-         if ( !empty($logo)) {
-             $classes[] = 'no-header-text';
-         }
+        if ( !empty($logo) ) {
+                $classes[] = 'no-header-text';
+        }
              
 
         if ('' != get_theme_mod( 'uku_front_section_twocolumn_excerpt') ) { 
@@ -168,9 +168,152 @@
             $classes[] = 'front_hidecats';
         } 
 
-         
-         
-         
+        if ('' != get_theme_mod( 'pirate_rogue_devider_hideimage' ) ) {
+            $classes[] = 'devider_hideimage';
+        } 
+        
+        // Head
+        if ('' != get_theme_mod( 'pirate_rogue_head_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_background_color' );
+            $classname = 'head-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_head_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_text_color' );
+            $classname = 'head-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_head_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_head_linkhover_color' );
+            $classname = 'head-linkborder-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_actionbutton_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_actionbutton_color' );
+            $classname = 'actionbutton-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        
+        
+        
+        // Main
+        if ('' != get_theme_mod( 'pirate_rogue_main_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_background_color' );
+            $classname = 'main-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_text_color' );
+            $classname = 'main-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_link_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_link_color' );
+            $classname = 'main-linkcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_linkhover_color' );
+            $classname = 'main-linkhovercol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_headline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_headline_color' );
+            $classname = 'main-headlinecol-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_titleunderline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_titleunderline_color' );
+            $classname = 'main-titleunderline-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_listitem_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_listitem_color' );
+            $classname = 'main-listitem-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_quoteborder_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_quoteborder_color' );
+            $classname = 'main-quoteborder-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        
+        
+        // Footer
+         if ('' != get_theme_mod( 'pirate_rogue_footer_background_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_background_color' );
+            $classname = 'footer-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_text_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_text_color' );
+            $classname = 'footer-textcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_link_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_link_color' );
+            $classname = 'footer-linkcol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_linkhover_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_linkhover_color' );
+            $classname = 'footer-linkhovercol-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_footer_headline_color' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_footer_headline_color' );
+            $classname = 'footer-headlinecol-'.$val;
+            $classes[] = $classname;
+        } 
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_meta_bgcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_bgcol' );
+            $classname = 'main-meta-bgcol-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_meta_bgcol_hover' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_bgcol_hover' );
+            $classname = 'main-meta-bgcol-hover-'.$val;
+            $classes[] = $classname;
+        } 
+         if ('' != get_theme_mod( 'pirate_rogue_main_meta_textcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_textcol' );
+            $classname = 'main-meta-textcol-'.$val;
+            $classes[] = $classname;
+        }
+        
+        if ('' != get_theme_mod( 'pirate_rogue_main_meta_textcol_hover' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_meta_textcol_hover' );
+            $classname = 'main-meta-textcol-hover-'.$val;
+            $classes[] = $classname;
+        } 
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_textcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_textcol' );
+            $classname = 'main-table-textcol-'.$val;
+            $classes[] = $classname;
+        }
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_bgcol' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_bgcol' );
+            $classname = 'main-table-bgcol-'.$val;
+            $classes[] = $classname;
+        }
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_bgcol_header' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_bgcol_header' );
+            $classname = 'main-table-bgcol-head-'.$val;
+            $classes[] = $classname;
+        }
+        if ('' != get_theme_mod( 'pirate_rogue_main_table_bgcol_oddrows' ) ) {
+            $val = get_theme_mod( 'pirate_rogue_main_table_bgcol_oddrows' );
+            $classname = 'main-table-bgcol-odd-'.$val;
+            $classes[] = $classname;
+        }
+        
+        
+
+        
 	 // Additional body classes for WooCommerce
 	 if ( is_active_sidebar( 'sidebar-shop' )) {
 		 $classes[] = 'sidebar-shop';
@@ -420,9 +563,7 @@ function pirate_rogue_get_image_attributs($id=0) {
 	    } elseif (!empty($result['credit'])) {
 		$result['credits'] = $precopyright.' '.$result['credit'];		
             } else {
-		if (!empty($result['description'])) {
-		    $result['credits'] = $result['description'];
-		} elseif (!empty($result['caption'])) {
+		if (!empty($result['caption'])) {
 		    $result['credits'] = $result['caption'];
 		} elseif (!empty($result['excerpt'])) {
 		    $result['credits'] = $result['excerpt'];
@@ -436,7 +577,6 @@ function pirate_rogue_get_image_attributs($id=0) {
 /*-----------------------------------------------------------------------------------*/
 /* Returns an array as table
 /*-----------------------------------------------------------------------------------*/
-
 function pirate_rogue_array2table($array, $table = true) {
     $out = '';
     $tableHeader = '';
@@ -466,3 +606,198 @@ function pirate_rogue_array2table($array, $table = true) {
         return $out;
     }
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*  Create String for Publisher Info, used by Schema.org Microformat Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_create_schema_publisher($withrahmen = true) {
+    $out = '';
+    if ($withrahmen) {
+	$out .= '<div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';  
+    }
+    $header_image = get_header_image();
+    if ($header_image) {
+        $src = esc_url( $header_image );
+        $width = get_custom_header()->width;
+        $height = get_custom_header()->height;
+    } else {
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+	if ( $custom_logo_id ) {
+            $image = wp_get_attachment_image_src($custom_logo_id, 'full'); 
+            if ( $image ) {
+                list($src, $width, $height) = $image;
+            }
+        }
+    }
+    $out .= '<div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+    $out .= '<meta itemprop="url" content="'.$src.'">';
+    $out .= '<meta itemprop="width" content="'.$width.'">';
+    $out .= '<meta itemprop="height" content="'.$height.'">';
+    $out .= '</div>';
+    $out .= '<meta itemprop="name" content="'.get_bloginfo( 'title' ).'">';
+    $out .= '<meta itemprop="url" content="'.home_url( '/' ).'">';
+    if ($withrahmen) {
+	$out .= '</div>';
+    }
+    return $out;
+}
+/*-----------------------------------------------------------------------------------*/
+/*  Create String for Thumbnail info, used by Scema.org Microformat Data
+/*-----------------------------------------------------------------------------------*/
+function pirate_rogue_create_schema_thumbnail($id = 0) {
+    $output = "";
+    if (!isset($id)) {
+        $id = get_the_ID();
+    }
+    $post_thumbnail_id = get_post_thumbnail_id( $id ); 
+    if ((!isset($post_thumbnail_id)) || ($post_thumbnail_id <= 0)) {
+        $thumbfallbackid = absint(get_theme_mod( 'pirate_rogue_fallback_blogroll_thumbnail' ));
+        if (isset($thumbfallbackid)) {
+           $post_thumbnail_id = $thumbfallbackid;
+        }
+    }
+  
+    
+    if ($post_thumbnail_id) {
+        $thumbimage = wp_get_attachment_image_src( $post_thumbnail_id);
+        $image =      wp_get_attachment_image_src( $post_thumbnail_id, 'full');
+        $imageurl = $image[0]; 	
+        $imgwidth = $image[1];
+        $imgheight = $image[2];
+        $output .= '<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
+        $output .= '<meta itemprop="thumbnailUrl" content="'.esc_url($thumbimage[0]).'">';
+        $output .= '<meta itemprop="url" content="'.esc_url($imageurl).'">';
+        $output .= '<meta itemprop="width" content="'.$imgwidth.'">';
+        $output .= '<meta itemprop="height" content="'.$imgheight.'">';
+        $output .= '</div>';
+    }
+    return $output;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Change output for gallery
+/*-----------------------------------------------------------------------------------*/
+add_filter('post_gallery', 'pirate_rogue_post_gallery', 10, 2);
+function pirate_rogue_post_gallery($output, $attr) {
+    global $post;
+    global $options;
+    
+    if (isset($attr['orderby'])) {
+        $attr['orderby'] = sanitize_sql_orderby($attr['orderby']);
+        if (!$attr['orderby'])
+            unset($attr['orderby']);
+    }
+
+    extract(shortcode_atts(array(
+        'order' => 'ASC',
+        'orderby' => 'menu_order ID',
+        'id' => $post->ID,
+        'itemtag' => 'dl',
+        'icontag' => 'dt',
+        'captiontag' => 'dd',
+        'columns' => 3,
+        'size' => 'thumbnail',
+        'include' => '',
+        'exclude' => '',
+	'type' => NULL,
+	'lightbox' => FALSE,
+	'captions' => 1,
+	'columns'   => 6,
+	'link'	=> 'file'
+
+    ), $attr));
+
+    $id = intval($id);
+    if ('RAND' == $order) $orderby = 'none';
+
+    if (!empty($include)) {
+        $include = preg_replace('/[^0-9,]+/', '', $include);
+        $_attachments = get_posts(
+            array('include' => $include, 
+                'post_status' => 'inherit', 
+                'post_type' => 'attachment', 
+                'post_mime_type' => 'image', 
+                'order' => $order, 
+                'orderby' => $orderby)
+            );
+
+        $attachments = array();
+        foreach ($_attachments as $key => $val) {
+            $attachments[$val->ID] = $_attachments[$key];
+        }
+    }
+
+    if (empty($attachments)) return '';
+
+	
+    $output = '';
+    if (!isset($attr['captions'])) {
+	$attr['captions'] =1;
+    }
+     if (!isset($attr['columns'])) {
+	$attr['columns'] = 7;
+    }
+    if (!isset($attr['type'])) {
+	$attr['type'] = 'default';
+    }
+    if (!isset($attr['link'])) {
+	$attr['link'] = 'file';
+    }
+   
+    
+    wp_enqueue_script( 'pirate-rogue-slick' );
+    $rand = rand();	    
+    $output .= "<div id=\"slider-$rand\" class=\"gallery\">\n";
+    $output .= "<div class=\"slider gallery-slider\">\n";
+    foreach ($attachments as $id => $attachment) {
+	$img = wp_get_attachment_image_src($id, 'pirate-rogue-gallery');
+        $meta = get_post($id);
+        $img_full = wp_get_attachment_image_src($id, 'full');
+	$output .= "\t".'<div><img src="'.esc_url($img[0]).'" width="'.$img[1].'" height="'.$img[2].'" alt="">';
+
+        if ($meta->post_excerpt != '') {
+            $output .= '<div class="gallery-image-caption">';
+            $lightboxattr = '';
+            if($meta->post_excerpt != '') { 
+                $output .= $meta->post_excerpt; 
+                $lightboxtitle = sanitize_text_field($meta->post_excerpt);
+                if (strlen(trim($lightboxtitle))>1) {
+                    $lightboxattr = ' title="'.$lightboxtitle.'"';
+                }
+            }
+            if ($attr['link'] != 'none') {
+                if($meta->post_excerpt != '') { $output .= '<br>'; }
+                $output .= '<span class="linkorigin">(<a href="'.esc_url($img_full[0]).'" '.$lightboxattr.' class="lightbox" rel="lightbox-'.$rand.'">'.__('Full Size','pirate-rogue').'</a>)</span>';
+            }
+            $output .='</div>';
+        }
+        
+        
+        $output .= '</div>'."\n";
+    }
+    $output .= "</div>\n";
+    $output .= "<script type=\"text/javascript\"> jQuery(document).ready(function($) {";
+    $output .= "$('.gallery-slider').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        arrows: true,
+        adaptiveHeight: true,
+        swipe: true,
+        draggable: true,
+        accessibility: true,
+    });";
+    $output .= "});</script>";
+    $output .= "</div>\n";
+    
+    
+    return $output;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/* EOF
+/*-----------------------------------------------------------------------------------*/

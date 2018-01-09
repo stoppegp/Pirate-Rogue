@@ -29,7 +29,12 @@ hr {
 	.site-content & {
 	    clear: both;
 	}
-	
+        .devider_hideimage & {
+            background-image: none;
+            border: 1px;
+            height: 1px;
+            background:  $color-hr;
+        }
 	
 }
 #overlay-nav .menu_separator hr {
